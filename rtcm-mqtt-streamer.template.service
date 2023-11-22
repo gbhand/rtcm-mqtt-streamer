@@ -1,0 +1,11 @@
+[Unit]
+Description=Send RTCM messages from a serial device to an MQTT topic
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/rtcm-mqtt-streamer/venv/bin/python /usr/bin/rtcm-mqtt-streamer/rtcm-mqtt-streamer.py --serial-port TPL_SERIAL_PORT --baud-rate TPL_BAUD_RATE --cert-path TPL_CERT_DIR --mqtt-uri TPL_MQTT_URI --mqtt-port TPL_MQTT_PORT --mqtt-topic TPL_MQTT_TOPIC
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

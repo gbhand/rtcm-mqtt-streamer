@@ -1,0 +1,5 @@
+certs
+venv
+*.bin
+*.bak
+*.zip
