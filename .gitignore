@@ -1,5 +1,6 @@
 certs
 venv
 *.bin
-*.bak
+*.bak.*
 *.zip
+rtcm-mqtt-streamer.service
