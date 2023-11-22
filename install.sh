@@ -56,8 +56,8 @@ if [ -f "${INSTALLED_SERVICE_PATH}" ]; then
     rm -rf "${INSTALLED_SERVICE_PATH}"
 
     echo "Reloading systemd"
-    sudo systemctl daemon-reload
-    sudo systemctl reset-failed
+    systemctl daemon-reload
+    systemctl reset-failed
 fi
 
 echo "Copying application files to ${INSTALL_DIR}"
@@ -76,10 +76,10 @@ cd "${SCRIPT_DIR}"
 cp rtcm-mqtt-streamer.service "${INSTALLED_SERVICE_PATH}"
 
 echo "Reloading systemd"
-sudo systemctl daemon-reload
+systemctl daemon-reload
 
 echo "Verifying service was successfully installed"
-sudo systemctl | grep rtcm-mqtt-streamer.service
+systemctl status rtcm-mqtt-streamer.service
 
 echo "Finished installing rtcm-mqtt-streamer!"
 echo "Enable it on boot with \`systemctl enable rtcm-mqtt-streamer\`"
