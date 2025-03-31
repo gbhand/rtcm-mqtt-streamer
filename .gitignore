@@ -4,3 +4,4 @@ venv
 *.bak.*
 *.zip
 rtcm-mqtt-streamer.service
+.DS_Store
